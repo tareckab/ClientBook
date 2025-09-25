@@ -1,5 +1,9 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
+
+//Criar variavel e validar conta
+
+
 class AuthService {
   final SharedPreferences _prefs;
   static const _kLoggedKey = 'logged';

@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
+//responsável por realizar operações HTTP (GET, POST, PUT, DELETE) 
+
 class ApiService {
   static const String baseUrl = 'https://68b0e9ef3b8db1ae9c052717.mockapi.io';
   static const String usersEndpoint = '/users';
@@ -10,7 +12,7 @@ class ApiService {
 
   static Future<List<Map<String, dynamic>>> listUsersRaw() async {
     final res = await http.get(_u(usersEndpoint));
-    if (res.statusCode == 200) {
+    if (res.statusCode == 200) { // se o request for = 200, retornara um response com a api em json
       final data = jsonDecode(res.body);
       if (data is List) return data.cast<Map<String, dynamic>>();
     }

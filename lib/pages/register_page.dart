@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../services/auth_service.dart';
 
+//page responsavel por criar usuario
+
+
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
 
@@ -9,10 +12,13 @@ class RegisterPage extends StatefulWidget {
   State<RegisterPage> createState() => _RegisterPageState();
 }
 
+// State é responsavel por 
 class _RegisterPageState extends State<RegisterPage> {
   final _formKey = GlobalKey<FormState>();
   final _email = TextEditingController();
   final _pass = TextEditingController();
+
+// dispose serve para liberar recursos usados pelo widget quando ele é removido da tela
 
   @override
   void dispose() {
@@ -21,6 +27,8 @@ class _RegisterPageState extends State<RegisterPage> {
     super.dispose();
   }
 
+
+  //validar 
   Future<void> _onRegister() async {
     if (!_formKey.currentState!.validate()) return;
     final auth = context.read<AuthService>();
@@ -52,7 +60,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 controller: _pass,
                 obscureText: true,
                 decoration: const InputDecoration(labelText: 'Senha', border: OutlineInputBorder()),
-                validator: (v) => (v == null || v.length < 6) ? 'Mínimo 6 caracteres' : null,
+                validator: (v) => (v == null || v.length < 4) ? 'Mínimo 4 caracteres' : null,
               ),
               const SizedBox(height: 16),
               SizedBox(

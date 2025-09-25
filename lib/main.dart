@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-
 import 'services/theme_notifier.dart';
 import 'services/auth_service.dart';
 import 'pages/splash_page.dart';
@@ -46,8 +44,8 @@ class MyApp extends StatelessWidget {
               '/splash': (_) => const SplashPage(), 
               '/login': (_) => const LoginPage(), // route login
               '/register': (_) => const RegisterPage(), // route register
-              '/home': (_) => const HomePage(),
-              '/items': (_) => const ResourceListPage(),
+              '/home': (_) => const HomePage(), // route home
+              '/items': (_) => const ResourceListPage(), // route items / clientes
               '/item_form': (_) => const UserFormPage(), // 
               '/about': (_) => const AboutPage(),
               '/settings': (_) => const SettingsPage(),
