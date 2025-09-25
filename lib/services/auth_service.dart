@@ -27,6 +27,8 @@ class AuthService {
   }
 
   // Autenticação local (verifica contra o que foi salvo)
+
+  // compara as variaveis para verificar se a conta cadastrada bate com o login
   Future<bool> login(String email, String pass) async {
     final savedEmail = _prefs.getString(_kEmailKey);
     final savedPass = _prefs.getString(_kPassKey);
